@@ -1,0 +1,61 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PayPilot: Setup (first time only)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\setup.bat",
+      "windows": {
+        "command": "${workspaceFolder}\\setup.bat"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "detail": "Creates .venv, installs dependencies, and initializes the local SQLite database. Run this once, and again only if requirements.txt changes."
+    },
+    {
+      "label": "PayPilot: Run",
+      "type": "shell",
+      "command": "${workspaceFolder}\\run.bat",
+      "windows": {
+        "command": "${workspaceFolder}\\run.bat"
+      },
+      "problemMatcher": [],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Starts the FastAPI/Uvicorn server at http://127.0.0.1:8000 using the project's .venv."
+    },
+    {
+      "label": "PayPilot: Run tests",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "pytest", "-q", "tests"],
+      "windows": {
+        "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+        "args": ["-m", "pytest", "-q", "tests"]
+      },
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": { "PYTHONPATH": "${workspaceFolder}\\backend" }
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "detail": "Runs the pytest suite against an isolated in-memory database. Requires setup.bat to have been run first."
+    }
+  ]
+}

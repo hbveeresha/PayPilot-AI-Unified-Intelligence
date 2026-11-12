@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14"><meta name="description" content="PayPilot AI is a local educational payment intelligence simulator.">
+  <title>PayPilot AI — Marketplace & Payment Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/app.css">
+  <link rel="stylesheet" href="/static/css/chat.css">
+  <link rel="stylesheet" href="/static/css/marketplace.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="/static/js/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="PayPilot AI home"><span class="brand-mark">P<span>✦</span></span><span class="brand-name">paypilot<span>AI</span></span></a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-list" aria-label="Main navigation">
+        <button class="nav-link active" data-page="dashboard"><i>◫</i>Dashboard</button>
+        <button class="nav-link" data-page="marketplace"><i>⌑</i>Marketplace</button>
+        <button class="nav-link" data-page="assistant"><i>✧</i>AI assistant<span class="nav-pip"></span></button>
+        <button class="nav-link" data-page="transactions"><i>⇄</i>Transactions</button>
+        <button class="nav-link" data-page="fraud"><i>⌁</i>Fraud intelligence</button>
+        <button class="nav-link" data-page="analytics"><i>▥</i>Analytics</button>
+        <button class="nav-link" data-page="reports"><i>▤</i>Reports</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="sidebar-note"><span class="pulse-dot"></span><div><b>Simulation mode</b><small>Local data · no real payments</small></div></div>
+      <button class="nav-link settings-link" data-page="settings"><i>⚙</i>Settings</button>
+      <div class="user-profile"><div class="avatar">P</div><div class="user-copy"><b>PayPilot workspace</b><small>Local administrator</small></div><span class="more">···</span></div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation">☰</button>
+        <div class="crumb">Workspace <span>/</span> <b id="page-crumb">Overview</b></div>
+        <div class="top-actions"><label class="global-search"><span>⌕</span><input id="global-search" placeholder="Search transactions…" aria-label="Search transactions"><kbd>⌘ K</kbd></label><button class="btn top-account" id="auth-action" type="button">Sign in</button><button class="icon-button" id="notifications" aria-label="Notifications">♧<i></i></button><div class="top-avatar">P</div></div>
+      </header>
+      <div id="toast" class="toast" role="status"></div>
+      <section id="page-content" class="page-content" aria-live="polite"><div class="loading-state"><span class="spinner"></span>Loading your workspace…</div></section>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div id="modal-body"></div></section></div>
+</body>
+</html>
